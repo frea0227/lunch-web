@@ -1,0 +1,20 @@
+<html>
+<head>
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+    Heute gibt es:
+
+    <ul id="meals"></ul>
+
+    <script type="text/javascript">
+        $.get('app/public/meals', function(data) {
+            var content = '';
+            for (var i = 0; i < data.length; i++){
+                content += '<li>'+data[i].name+' f&uuml;r '+data[i].price+'</li>';
+            }
+            $('#meals').html(content);
+        });
+    </script>
+</body>
+</html>
